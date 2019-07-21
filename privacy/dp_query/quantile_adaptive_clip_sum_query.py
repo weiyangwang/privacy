@@ -33,7 +33,11 @@ from privacy.dp_query import dp_query
 from privacy.dp_query import gaussian_query
 from privacy.dp_query import normalized_query
 
-nest = tf.contrib.framework.nest
+from distutils.version import LooseVersion
+if LooseVersion(tf.__version__) < LooseVersion('2.0.0'):
+  nest = tf.contrib.framework.nest
+else:
+  nest = tf.nest
 
 
 class QuantileAdaptiveClipSumQuery(dp_query.DPQuery):
