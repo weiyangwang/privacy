@@ -191,7 +191,7 @@ def print_privacy_guarantees(epochs, batch_size, samples, noise_multiplier):
 
 
 def main(unused_argv):
-  tf.logging.set_verbosity(tf.logging.INFO)
+  #tf.logging.set_verbosity(tf.logging.INFO)
   if FLAGS.data_l2_norm <= 0:
     raise ValueError('data_l2_norm must be positive.')
   if FLAGS.dpsgd and FLAGS.learning_rate > 8 / FLAGS.data_l2_norm**2:
