@@ -45,6 +45,7 @@ import numpy as np
 import tensorflow as tf
 import tensorflow_datasets as tfds
 
+from distutils.version import LooseVersion
 if LooseVersion(tf.__version__) < LooseVersion('2.0.0'):
   log = tf.logging
 else:
