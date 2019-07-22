@@ -16,7 +16,7 @@ from setuptools import setup
 
 setup(name='privacy',
       version='0.0.1',
-      url='https://github.com/tensorflow/privacy',
+      url='https://github.com/weiyangwang/privacy',
       license='Apache-2.0',
       install_requires=[
           'scipy>=0.17',
