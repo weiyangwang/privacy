@@ -39,16 +39,16 @@ import os
 
 from absl import app
 from absl import flags
-from absl import absl_logging
+from absl import logging
 
 import numpy as np
 import tensorflow as tf
 import tensorflow_datasets as tfds
 
 if LooseVersion(tf.__version__) < LooseVersion('2.0.0'):
-  logging = tf.logging
+  log = tf.logging
 else:
-  logging = absl_logging
+  log = logging
 
 from privacy.analysis import privacy_ledger
 from privacy.analysis.rdp_accountant import compute_rdp
@@ -176,7 +176,7 @@ def compute_epsilon(steps):
 
 
 def main(unused_argv):
-  logging.set_verbosity(logging.INFO)
+  log.set_verbosity(log.INFO)
   if FLAGS.batch_size % FLAGS.microbatches != 0:
     raise ValueError('Number of microbatches should divide evenly batch_size')
 
